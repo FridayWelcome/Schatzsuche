@@ -31,7 +31,8 @@ h1 {
   padding: 15px;
   cursor: pointer;
 }
-  .selected {
+
+.selected {
   background: #c8f7c5;
 }
 </style>
@@ -39,22 +40,23 @@ h1 {
 
 <body>
 
-<h1>🌱 Schatzsuche</h1>
+<h1 id="title">🌱 Schatzsuche</h1>
 
-<p>
+<p id="subtitle">
 Menschen sehen. Talente entdecken. Gemeinschaft stärken.
 </p>
 
-<h2>Sprache wählen</h2>
+<h2 id="languageTitle">Sprache wählen</h2>
 
 <div class="languages">
-  <div class="lang">🇩🇪 Deutsch</div>
-  <div class="lang">🇬🇧 English</div>
-  <div class="lang">🇸🇾 العربية</div>
-  <div class="lang">🇺🇦 Українська</div>
-  <div class="lang">🇹🇷 Türkçe</div>
+  <div class="lang language" onclick="setLanguage('de')">🇩🇪 Deutsch</div>
+  <div class="lang language" onclick="setLanguage('en')">🇬🇧 English</div>
+  <div class="lang language">🇸🇾 العربية</div>
+  <div class="lang language">🇺🇦 Українська</div>
+  <div class="lang language">🇹🇷 Türkçe</div>
 </div>
-<h2>Was kann ich gut?</h2>
+
+<h2 id="skillsTitle">Was kann ich gut?</h2>
 
 <div class="languages">
   <div class="lang">🔧 Handwerk</div>
@@ -68,12 +70,17 @@ Menschen sehen. Talente entdecken. Gemeinschaft stärken.
   <div class="lang">👶 Kinderbetreuung</div>
   <div class="lang">🎨 Kreativität</div>
 </div>
-  <script>
-document.querySelectorAll('.lang').forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('selected');
+
+<script>
+
+function setLanguage(lang) {
+
+  document.querySelectorAll('.language').forEach(item => {
+    item.classList.remove('selected');
   });
-});
-</script>
-</body>
-</html>
+
+  event.target.classList.add('selected');
+
+  if(lang === 'de') {
+    document.getElementById('title').innerText = '🌱 Schatzsuche';
+    document.
