@@ -60,10 +60,7 @@ h2 {
     padding: 20px;
     text-align: center;
     cursor: pointer;
-    transition:
-        transform 0.2s,
-        border-color 0.2s,
-        background-color 0.2s;
+    transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
 }
 
 .card:hover {
@@ -106,9 +103,7 @@ h2 {
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition:
-        background-color 0.2s,
-        transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .continue-button:hover {
@@ -167,12 +162,89 @@ h2 {
     border-radius: 10px;
     font-family: Arial, sans-serif;
     font-size: 1rem;
-    transition:
-        border-color 0.2s,
-        box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .about-form input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+    outline: none;
+}
+
+.talent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.page-hint {
+    text-align: center;
+    line-height: 1.5;
+    color: #555;
+}
+
+#talents-page {
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+#talents-page[hidden] {
+    display: none;
+}
+
+#talents-title {
+    color: #2e7d32;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#hidden-treasures-page {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.12);
+}
+
+#hidden-treasures-page[hidden] {
+    display: none;
+}
+
+#hidden-treasures-title {
+    color: #2e7d32;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.question-group {
+    display: grid;
+    gap: 12px;
+}
+
+.question-group label {
+    margin-top: 16px;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.question-group textarea {
+    width: 100%;
+    padding: 14px;
+    color: #333;
+    background: #fbfdfb;
+    border: 2px solid #d9e5d9;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.question-group textarea:focus {
     border-color: #4caf50;
     box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
     outline: none;
@@ -182,7 +254,12 @@ body.arabic .subtitle,
 body.arabic .welcome,
 body.arabic h2,
 body.arabic #about-title,
-body.arabic .about-form {
+body.arabic .about-form,
+body.arabic #talents-title,
+body.arabic #talents-hint,
+body.arabic #hidden-treasures-title,
+body.arabic #hidden-treasures-hint,
+body.arabic .question-group {
     direction: rtl;
     text-align: right;
 }
@@ -196,7 +273,8 @@ body.arabic .about-form {
         font-size: 2rem;
     }
 
-    .language-grid {
+    .language-grid,
+    .talent-grid {
         grid-template-columns: 1fr;
     }
 
@@ -204,13 +282,16 @@ body.arabic .about-form {
         width: 100%;
     }
 
-    #about-page {
+    #about-page,
+    #hidden-treasures-page {
         margin: 10px auto;
         padding: 22px 18px;
         border-radius: 16px;
     }
 
-    #about-title {
+    #about-title,
+    #talents-title,
+    #hidden-treasures-title {
         font-size: 1.7rem;
     }
 }
