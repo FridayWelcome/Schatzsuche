@@ -1,6 +1,37 @@
 const languageCards = document.querySelectorAll(".card");
 const continueButton = document.querySelector("#continue-button");
 const aboutContinueButton = document.querySelector("#about-continue-button");
+const talentGrid = document.querySelector("#talent-grid");
+
+const talents = [
+    { icon: "🔧", name: "Handwerk" },
+    { icon: "💻", name: "Computer" },
+    { icon: "👨‍🍳", name: "Kochen" },
+    { icon: "🌱", name: "Garten" },
+    { icon: "🎵", name: "Musik" },
+    { icon: "📷", name: "Fotografie" },
+    { icon: "👩‍🏫", name: "Unterrichten" },
+    { icon: "🗣", name: "Übersetzen" },
+    { icon: "👶", name: "Kinderbetreuung" },
+    { icon: "🎨", name: "Kreativität" }
+];
+
+talents.forEach((talent) => {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "card";
+    button.innerHTML = `
+        <div class="flags">${talent.icon}</div>
+        <div class="language-name">${talent.name}</div>
+    `;
+
+    button.addEventListener("click", () => {
+        button.classList.toggle("selected");
+    });
+
+    talentGrid.appendChild(button);
+});
 
 const translations = {
     de: {
