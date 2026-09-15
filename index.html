@@ -79,4 +79,21 @@ function english(element) {
   document.getElementById("subtitle").innerText =
     "See people. Discover talents. Strengthen community.";
 
-  document
+  document.getElementById("sprache").innerText =
+    "Choose language";
+}
+
+function reset() {
+
+  const kacheln = document.querySelectorAll(".kachel");
+
+  kacheln.forEach(function(k) {
+    k.classList.remove("selected");
+  });
+
+}
+
+</script>
+
+</body>
+</html>
