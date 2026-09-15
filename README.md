@@ -1,2 +1,2 @@
 # Schatzsuche
-Talente entdecken. Gemeinschaft stärken. Menschen sehen.
+Menschen sehen. Talente entdecken. Gemeinschaft stärken. 
