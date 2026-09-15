@@ -1,3 +1,5 @@
+alert("app.js wurde geladen");
+
 const languageCards = document.querySelectorAll(".card");
 
 languageCards.forEach((card) => {
@@ -7,5 +9,6 @@ languageCards.forEach((card) => {
         });
 
         card.classList.add("selected");
+        alert("Sprache wurde ausgewählt");
     });
-});console.log("Schatzsuche gestartet");
+});
