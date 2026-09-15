@@ -83,3 +83,7 @@ languageCards.forEach((card) => {
         document.body.classList.toggle("arabic", language === "ar");
     });
 });
+continueButton.addEventListener("click", () => {
+    document.querySelector("#language-page").hidden = true;
+    document.querySelector("#about-page").hidden = false;
+});
