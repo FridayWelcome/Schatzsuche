@@ -31,6 +31,9 @@ h1 {
   padding: 15px;
   cursor: pointer;
 }
+  .selected {
+  background: #c8f7c5;
+}
 </style>
 </head>
 
@@ -65,5 +68,12 @@ Menschen sehen. Talente entdecken. Gemeinschaft stärken.
   <div class="lang">👶 Kinderbetreuung</div>
   <div class="lang">🎨 Kreativität</div>
 </div>
+  <script>
+document.querySelectorAll('.lang').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('selected');
+  });
+});
+</script>
 </body>
 </html>
