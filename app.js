@@ -1,37 +1,8 @@
 const languageCards = document.querySelectorAll(".card");
 const continueButton = document.querySelector("#continue-button");
 const aboutContinueButton = document.querySelector("#about-continue-button");
+const talentsContinueButton = document.querySelector("#talents-continue-button");
 const talentGrid = document.querySelector("#talent-grid");
-
-const talents = [
-    { icon: "🔧", name: "Handwerk" },
-    { icon: "💻", name: "Computer" },
-    { icon: "👨‍🍳", name: "Kochen" },
-    { icon: "🌱", name: "Garten" },
-    { icon: "🎵", name: "Musik" },
-    { icon: "📷", name: "Fotografie" },
-    { icon: "👩‍🏫", name: "Unterrichten" },
-    { icon: "🗣", name: "Übersetzen" },
-    { icon: "👶", name: "Kinderbetreuung" },
-    { icon: "🎨", name: "Kreativität" }
-];
-
-talents.forEach((talent) => {
-    const button = document.createElement("button");
-
-    button.type = "button";
-    button.className = "card";
-    button.innerHTML = `
-        <div class="flags">${talent.icon}</div>
-        <div class="language-name">${talent.name}</div>
-    `;
-
-    button.addEventListener("click", () => {
-        button.classList.toggle("selected");
-    });
-
-    talentGrid.appendChild(button);
-});
 
 const translations = {
     de: {
@@ -148,6 +119,36 @@ const translations = {
     }
 };
 
+const talents = [
+    { icon: "🔧", name: "Handwerk" },
+    { icon: "💻", name: "Computer" },
+    { icon: "👨‍🍳", name: "Kochen" },
+    { icon: "🌱", name: "Garten" },
+    { icon: "🎵", name: "Musik" },
+    { icon: "📷", name: "Fotografie" },
+    { icon: "👩‍🏫", name: "Unterrichten" },
+    { icon: "🗣", name: "Übersetzen" },
+    { icon: "👶", name: "Kinderbetreuung" },
+    { icon: "🎨", name: "Kreativität" }
+];
+
+talents.forEach((talent) => {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "card";
+    button.innerHTML = `
+        <div class="flags">${talent.icon}</div>
+        <div class="language-name">${talent.name}</div>
+    `;
+
+    button.addEventListener("click", () => {
+        button.classList.toggle("selected");
+    });
+
+    talentGrid.appendChild(button);
+});
+
 languageCards.forEach((card) => {
     card.addEventListener("click", () => {
         const language = card.dataset.language;
@@ -162,35 +163,24 @@ languageCards.forEach((card) => {
         document.querySelector(".hero h1").textContent = text.title;
         document.querySelector(".subtitle").textContent = text.subtitle;
         document.querySelector(".welcome").textContent = text.welcome;
-        document.querySelector("#language-heading").textContent =
-            text.chooseLanguage;
+        document.querySelector("#language-heading").textContent = text.chooseLanguage;
 
         continueButton.textContent = text.continueText;
         continueButton.hidden = false;
 
-        document.querySelector("#about-title").textContent =
-            text.aboutTitle;
-        document.querySelector("#name-label").textContent =
-            text.nameLabel;
-        document.querySelector("#city-label").textContent =
-            text.cityLabel;
-        document.querySelector("#country-label").textContent =
-            text.countryLabel;
-        document.querySelector("#mother-language-label").textContent =
-            text.motherLanguageLabel;
-        document.querySelector("#other-languages-label").textContent =
-            text.otherLanguagesLabel;
+        document.querySelector("#about-title").textContent = text.aboutTitle;
+        document.querySelector("#name-label").textContent = text.nameLabel;
+        document.querySelector("#city-label").textContent = text.cityLabel;
+        document.querySelector("#country-label").textContent = text.countryLabel;
+        document.querySelector("#mother-language-label").textContent = text.motherLanguageLabel;
+        document.querySelector("#other-languages-label").textContent = text.otherLanguagesLabel;
 
         aboutContinueButton.textContent = text.continueText;
-
-        document.querySelector("#talents-title").textContent =
-            text.talentsTitle;
+        talentsContinueButton.textContent = text.continueText;
+        document.querySelector("#talents-title").textContent = text.talentsTitle;
 
         document.documentElement.lang = language;
-        document.body.classList.toggle(
-            "arabic",
-            language === "ar"
-        );
+        document.body.classList.toggle("arabic", language === "ar");
     });
 });
 
@@ -202,4 +192,9 @@ continueButton.addEventListener("click", () => {
 aboutContinueButton.addEventListener("click", () => {
     document.querySelector("#about-page").hidden = true;
     document.querySelector("#talents-page").hidden = false;
+});
+
+talentsContinueButton.addEventListener("click", () => {
+    document.querySelector("#talents-page").hidden = true;
+    document.querySelector("#hidden-treasures-page").hidden = false;
 });
