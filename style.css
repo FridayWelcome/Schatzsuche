@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #f4f8f4;
@@ -121,9 +125,64 @@ h2 {
     display: none;
 }
 
+#about-page {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.12);
+}
+
+#about-page[hidden] {
+    display: none;
+}
+
+#about-title {
+    color: #2e7d32;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.about-form {
+    display: grid;
+    gap: 10px;
+}
+
+.about-form label {
+    margin-top: 12px;
+    color: #2e7d32;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.about-form input {
+    width: 100%;
+    padding: 14px;
+    color: #333;
+    background: #fbfdfb;
+    border: 2px solid #d9e5d9;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.about-form input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+    outline: none;
+}
+
 body.arabic .subtitle,
 body.arabic .welcome,
-body.arabic h2 {
+body.arabic h2,
+body.arabic #about-title,
+body.arabic .about-form {
     direction: rtl;
     text-align: right;
 }
@@ -143,5 +202,15 @@ body.arabic h2 {
 
     .continue-button {
         width: 100%;
+    }
+
+    #about-page {
+        margin: 10px auto;
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    #about-title {
+        font-size: 1.7rem;
     }
 }
