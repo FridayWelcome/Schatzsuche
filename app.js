@@ -30,6 +30,16 @@ const translations = {
         subtitle: "İnsanları görmek. Yetenekleri keşfetmek. Toplumu güçlendirmek.",
         welcome: "Her insanın becerileri, deneyimleri ve yetenekleri vardır. Birlikte toplumumuzun hazinelerini görünür kılmak istiyoruz.",
         chooseLanguage: "Dil seçin"
+    },
+    vi: {
+        subtitle: "Nhìn thấy con người. Khám phá tài năng. Gắn kết cộng đồng.",
+        welcome: "Mỗi người đều có kỹ năng, kinh nghiệm và tài năng. Cùng nhau, chúng ta muốn làm cho những kho báu trong cộng đồng trở nên rõ ràng hơn.",
+        chooseLanguage: "Chọn ngôn ngữ"
+    },
+    ru: {
+        subtitle: "Видеть людей. Открывать таланты. Укреплять сообщество.",
+        welcome: "У каждого человека есть способности, опыт и таланты. Вместе мы хотим сделать сокровища нашего сообщества видимыми.",
+        chooseLanguage: "Выберите язык"
     }
 };
 
@@ -49,6 +59,6 @@ languageCards.forEach((card) => {
         document.querySelector("h2").textContent = text.chooseLanguage;
 
         document.documentElement.lang = language;
-        document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+        document.body.classList.toggle("arabic", language === "ar");
     });
 });
