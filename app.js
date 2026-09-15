@@ -1,5 +1,6 @@
 const languageCards = document.querySelectorAll(".card");
 const continueButton = document.querySelector("#continue-button");
+const aboutContinueButton = document.querySelector("#about-continue-button");
 
 const translations = {
     de: {
@@ -13,7 +14,8 @@ const translations = {
         cityLabel: "Stadt",
         countryLabel: "Herkunftsland",
         motherLanguageLabel: "Muttersprache",
-        otherLanguagesLabel: "Weitere Sprachen"
+        otherLanguagesLabel: "Weitere Sprachen",
+        talentsTitle: "Was kann ich gut?"
     },
     en: {
         title: "🌱 Treasure Hunt",
@@ -26,7 +28,8 @@ const translations = {
         cityLabel: "City",
         countryLabel: "Country of origin",
         motherLanguageLabel: "Native language",
-        otherLanguagesLabel: "Other languages"
+        otherLanguagesLabel: "Other languages",
+        talentsTitle: "What am I good at?"
     },
     fr: {
         title: "🌱 Chasse aux trésors",
@@ -39,7 +42,8 @@ const translations = {
         cityLabel: "Ville",
         countryLabel: "Pays d’origine",
         motherLanguageLabel: "Langue maternelle",
-        otherLanguagesLabel: "Autres langues"
+        otherLanguagesLabel: "Autres langues",
+        talentsTitle: "Qu’est-ce que je sais bien faire ?"
     },
     ar: {
         title: "🌱 البحث عن الكنوز",
@@ -52,7 +56,8 @@ const translations = {
         cityLabel: "المدينة",
         countryLabel: "بلد الأصل",
         motherLanguageLabel: "اللغة الأم",
-        otherLanguagesLabel: "لغات أخرى"
+        otherLanguagesLabel: "لغات أخرى",
+        talentsTitle: "ما الذي أجيده؟"
     },
     uk: {
         title: "🌱 Пошук скарбів",
@@ -65,7 +70,8 @@ const translations = {
         cityLabel: "Місто",
         countryLabel: "Країна походження",
         motherLanguageLabel: "Рідна мова",
-        otherLanguagesLabel: "Інші мови"
+        otherLanguagesLabel: "Інші мови",
+        talentsTitle: "Що я вмію добре?"
     },
     tr: {
         title: "🌱 Hazine Avı",
@@ -78,7 +84,8 @@ const translations = {
         cityLabel: "Şehir",
         countryLabel: "Geldiğim ülke",
         motherLanguageLabel: "Ana dil",
-        otherLanguagesLabel: "Diğer diller"
+        otherLanguagesLabel: "Diğer diller",
+        talentsTitle: "Neyi iyi yapabilirim?"
     },
     vi: {
         title: "🌱 Săn tìm kho báu",
@@ -91,7 +98,8 @@ const translations = {
         cityLabel: "Thành phố",
         countryLabel: "Quốc gia xuất xứ",
         motherLanguageLabel: "Tiếng mẹ đẻ",
-        otherLanguagesLabel: "Các ngôn ngữ khác"
+        otherLanguagesLabel: "Các ngôn ngữ khác",
+        talentsTitle: "Tôi giỏi làm gì?"
     },
     ru: {
         title: "🌱 Поиск сокровищ",
@@ -104,7 +112,8 @@ const translations = {
         cityLabel: "Город",
         countryLabel: "Страна происхождения",
         motherLanguageLabel: "Родной язык",
-        otherLanguagesLabel: "Другие языки"
+        otherLanguagesLabel: "Другие языки",
+        talentsTitle: "Что я умею делать хорошо?"
     }
 };
 
@@ -141,6 +150,11 @@ languageCards.forEach((card) => {
         document.querySelector("#other-languages-label").textContent =
             text.otherLanguagesLabel;
 
+        aboutContinueButton.textContent = text.continueText;
+
+        document.querySelector("#talents-title").textContent =
+            text.talentsTitle;
+
         document.documentElement.lang = language;
         document.body.classList.toggle(
             "arabic",
@@ -152,4 +166,9 @@ languageCards.forEach((card) => {
 continueButton.addEventListener("click", () => {
     document.querySelector("#language-page").hidden = true;
     document.querySelector("#about-page").hidden = false;
+});
+
+aboutContinueButton.addEventListener("click", () => {
+    document.querySelector("#about-page").hidden = true;
+    document.querySelector("#talents-page").hidden = false;
 });
