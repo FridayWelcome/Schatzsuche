@@ -18,17 +18,13 @@ h1 {
   color: #2c3e50;
 }
 
-.languages {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.lang {
+.kachel {
+  display: inline-block;
   background: white;
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 15px;
+  margin: 5px;
   cursor: pointer;
 }
 
@@ -36,8 +32,8 @@ h1 {
   background: #c8f7c5;
 }
 </style>
-
 </head>
+
 <body>
 
 <h1 id="title">🌱 Schatzsuche</h1>
@@ -46,44 +42,41 @@ h1 {
 Menschen sehen. Talente entdecken. Gemeinschaft stärken.
 </p>
 
-<h2 id="languageTitle">Sprache wählen</h2>
+<h2 id="sprache">Sprache wählen</h2>
 
-<div class="languages">
-  <div class="lang language" onclick="setLanguage('de', this)">🇩🇪 Deutsch</div>
-  <div class="lang language" onclick="setLanguage('en', this)">🇬🇧 English</div>
-  <div class="lang language">🇸🇾 العربية</div>
-  <div class="lang language">🇺🇦 Українська</div>
-  <div class="lang language">🇹🇷 Türkçe</div>
-</div>
-
-<h2 id="skillsTitle">Was kann ich gut?</h2>
-
-<div class="languages">
-  <div class="lang">🔧 Handwerk</div>
-  <div class="lang">💻 Computer</div>
-  <div class="lang">👨‍🍳 Kochen</div>
-  <div class="lang">🌱 Garten</div>
-  <div class="lang">🎵 Musik</div>
-  <div class="lang">📷 Fotografie</div>
-  <div class="lang">👩‍🏫 Unterrichten</div>
-  <div class="lang">🗣️ Übersetzen</div>
-  <div class="lang">👶 Kinderbetreuung</div>
-  <div class="lang">🎨 Kreativität</div>
+<div>
+  <div class="kachel" onclick="deutsch(this)">🇩🇪 Deutsch</div>
+  <div class="kachel" onclick="english(this)">🇬🇧 English</div>
 </div>
 
 <script>
 
-function setLanguage(lang, element) {
+function deutsch(element) {
 
-  document.querySelectorAll('.language').forEach(item => {
-    item.classList.remove('selected');
-  });
+  reset();
 
-  element.classList.add('selected');
+  element.classList.add("selected");
 
-  if (lang === 'de') {
-    document.getElementById('title').innerText =
-      '🌱 Schatzsuche';
+  document.getElementById("title").innerText =
+    "🌱 Schatzsuche";
 
-    document.getElementById('subtitle').innerText =
-      'Menschen
+  document.getElementById("subtitle").innerText =
+    "Menschen sehen. Talente entdecken. Gemeinschaft stärken.";
+
+  document.getElementById("sprache").innerText =
+    "Sprache wählen";
+}
+
+function english(element) {
+
+  reset();
+
+  element.classList.add("selected");
+
+  document.getElementById("title").innerText =
+    "🌱 Treasure Hunt";
+
+  document.getElementById("subtitle").innerText =
+    "See people. Discover talents. Strengthen community.";
+
+  document
