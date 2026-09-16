@@ -2,6 +2,8 @@ const languageCards = document.querySelectorAll("#language-page .card");
 const continueButton = document.querySelector("#continue-button");
 const aboutContinueButton = document.querySelector("#about-continue-button");
 const talentsContinueButton = document.querySelector("#talents-continue-button");
+const hiddenContinueButton = document.querySelector("#hidden-continue-button");
+const supportContinueButton = document.querySelector("#support-continue-button");
 const talentGrid = document.querySelector("#talent-grid");
 
 let selectedLanguage = "de";
@@ -26,7 +28,18 @@ const translations = {
         hiddenHint: "Manche Fähigkeiten werden nicht sofort gesehen.",
         overlookedLabel: "Welche Fähigkeit an dir wird oft übersehen?",
         proudLabel: "Worauf bist du stolz?",
-        enjoyLabel: "Was machst du besonders gerne?"
+        enjoyLabel: "Was machst du besonders gerne?",
+        supportTitle: "Helfen und Unterstützung",
+        supportHint: "Gemeinschaft entsteht, wenn Menschen geben und Unterstützung annehmen können.",
+        canHelpLabel: "Ich kann helfen bei …",
+        needHelpLabel: "Ich wünsche Unterstützung bei …",
+        summaryTitle: "Zusammenfassung",
+        summaryHint: "Hier siehst du deine bisherigen Angaben.",
+        personalSection: "Persönliche Angaben",
+        talentsSection: "Ausgewählte Talente",
+        treasuresSection: "Verborgene Schätze",
+        supportSection: "Helfen und Unterstützung",
+        emptyText: "Keine Angabe"
     },
     en: {
         title: "🌱 Treasure Hunt",
@@ -47,7 +60,18 @@ const translations = {
         hiddenHint: "Some abilities are not noticed immediately.",
         overlookedLabel: "Which of your abilities is often overlooked?",
         proudLabel: "What are you proud of?",
-        enjoyLabel: "What do you especially enjoy doing?"
+        enjoyLabel: "What do you especially enjoy doing?",
+        supportTitle: "Helping and support",
+        supportHint: "Community grows when people can give help and receive support.",
+        canHelpLabel: "I can help with …",
+        needHelpLabel: "I would like support with …",
+        summaryTitle: "Summary",
+        summaryHint: "Here you can see the information you have entered.",
+        personalSection: "Personal information",
+        talentsSection: "Selected talents",
+        treasuresSection: "Hidden treasures",
+        supportSection: "Helping and support",
+        emptyText: "No information provided"
     },
     fr: {
         title: "🌱 Chasse aux trésors",
@@ -68,7 +92,18 @@ const translations = {
         hiddenHint: "Certaines compétences ne sont pas visibles immédiatement.",
         overlookedLabel: "Quelle compétence chez vous est souvent négligée ?",
         proudLabel: "De quoi êtes-vous fier ou fière ?",
-        enjoyLabel: "Qu’aimez-vous particulièrement faire ?"
+        enjoyLabel: "Qu’aimez-vous particulièrement faire ?",
+        supportTitle: "Aide et soutien",
+        supportHint: "La communauté grandit lorsque les personnes peuvent aider et recevoir du soutien.",
+        canHelpLabel: "Je peux aider pour …",
+        needHelpLabel: "J’aimerais recevoir de l’aide pour …",
+        summaryTitle: "Résumé",
+        summaryHint: "Vous pouvez voir ici les informations que vous avez saisies.",
+        personalSection: "Informations personnelles",
+        talentsSection: "Talents sélectionnés",
+        treasuresSection: "Trésors cachés",
+        supportSection: "Aide et soutien",
+        emptyText: "Aucune information"
     },
     ar: {
         title: "🌱 البحث عن الكنوز",
@@ -89,7 +124,18 @@ const translations = {
         hiddenHint: "بعض المهارات لا يلاحظها الآخرون فورًا.",
         overlookedLabel: "ما المهارة التي لديك وغالبًا لا يلاحظها الآخرون؟",
         proudLabel: "بماذا تفتخر؟",
-        enjoyLabel: "ما الذي تستمتع بفعله بشكل خاص؟"
+        enjoyLabel: "ما الذي تستمتع بفعله بشكل خاص؟",
+        supportTitle: "المساعدة والدعم",
+        supportHint: "ينمو المجتمع عندما يستطيع الناس تقديم المساعدة وتلقي الدعم.",
+        canHelpLabel: "يمكنني المساعدة في …",
+        needHelpLabel: "أرغب في الحصول على دعم في …",
+        summaryTitle: "الملخص",
+        summaryHint: "هنا يمكنك رؤية المعلومات التي أدخلتها.",
+        personalSection: "المعلومات الشخصية",
+        talentsSection: "المواهب المختارة",
+        treasuresSection: "الكنوز المخفية",
+        supportSection: "المساعدة والدعم",
+        emptyText: "لا توجد معلومات"
     },
     uk: {
         title: "🌱 Пошук скарбів",
@@ -110,7 +156,18 @@ const translations = {
         hiddenHint: "Деякі здібності помічають не відразу.",
         overlookedLabel: "Яку вашу здібність часто не помічають?",
         proudLabel: "Чим ви пишаєтеся?",
-        enjoyLabel: "Що вам особливо подобається робити?"
+        enjoyLabel: "Що вам особливо подобається робити?",
+        supportTitle: "Допомога та підтримка",
+        supportHint: "Спільнота розвивається, коли люди можуть допомагати й отримувати підтримку.",
+        canHelpLabel: "Я можу допомогти з …",
+        needHelpLabel: "Мені потрібна підтримка з …",
+        summaryTitle: "Підсумок",
+        summaryHint: "Тут ви можете переглянути введені дані.",
+        personalSection: "Особисті дані",
+        talentsSection: "Обрані таланти",
+        treasuresSection: "Приховані скарби",
+        supportSection: "Допомога та підтримка",
+        emptyText: "Немає даних"
     },
     tr: {
         title: "🌱 Hazine Avı",
@@ -131,7 +188,18 @@ const translations = {
         hiddenHint: "Bazı beceriler hemen fark edilmez.",
         overlookedLabel: "Hangi beceriniz çoğu zaman gözden kaçıyor?",
         proudLabel: "Neyle gurur duyuyorsunuz?",
-        enjoyLabel: "Özellikle ne yapmaktan hoşlanıyorsunuz?"
+        enjoyLabel: "Özellikle ne yapmaktan hoşlanıyorsunuz?",
+        supportTitle: "Yardım ve destek",
+        supportHint: "İnsanlar yardım edip destek alabildiğinde toplum güçlenir.",
+        canHelpLabel: "Şu konularda yardımcı olabilirim …",
+        needHelpLabel: "Şu konularda destek istiyorum …",
+        summaryTitle: "Özet",
+        summaryHint: "Girdiğiniz bilgileri burada görebilirsiniz.",
+        personalSection: "Kişisel bilgiler",
+        talentsSection: "Seçilen yetenekler",
+        treasuresSection: "Gizli hazineler",
+        supportSection: "Yardım ve destek",
+        emptyText: "Bilgi girilmedi"
     },
     vi: {
         title: "🌱 Săn tìm kho báu",
@@ -152,7 +220,18 @@ const translations = {
         hiddenHint: "Một số khả năng không được nhận ra ngay lập tức.",
         overlookedLabel: "Khả năng nào của bạn thường bị bỏ qua?",
         proudLabel: "Bạn tự hào về điều gì?",
-        enjoyLabel: "Bạn đặc biệt thích làm gì?"
+        enjoyLabel: "Bạn đặc biệt thích làm gì?",
+        supportTitle: "Giúp đỡ và hỗ trợ",
+        supportHint: "Cộng đồng phát triển khi mọi người có thể giúp đỡ và nhận hỗ trợ.",
+        canHelpLabel: "Tôi có thể giúp về …",
+        needHelpLabel: "Tôi mong muốn được hỗ trợ về …",
+        summaryTitle: "Tóm tắt",
+        summaryHint: "Tại đây bạn có thể xem thông tin đã nhập.",
+        personalSection: "Thông tin cá nhân",
+        talentsSection: "Tài năng đã chọn",
+        treasuresSection: "Kho báu ẩn giấu",
+        supportSection: "Giúp đỡ và hỗ trợ",
+        emptyText: "Chưa có thông tin"
     },
     ru: {
         title: "🌱 Поиск сокровищ",
@@ -173,7 +252,18 @@ const translations = {
         hiddenHint: "Некоторые способности замечают не сразу.",
         overlookedLabel: "Какую вашу способность часто не замечают?",
         proudLabel: "Чем вы гордитесь?",
-        enjoyLabel: "Что вам особенно нравится делать?"
+        enjoyLabel: "Что вам особенно нравится делать?",
+        supportTitle: "Помощь и поддержка",
+        supportHint: "Сообщество развивается, когда люди могут помогать и получать поддержку.",
+        canHelpLabel: "Я могу помочь с …",
+        needHelpLabel: "Мне нужна поддержка с …",
+        summaryTitle: "Итоги",
+        summaryHint: "Здесь вы можете увидеть введённые данные.",
+        personalSection: "Личные данные",
+        talentsSection: "Выбранные таланты",
+        treasuresSection: "Скрытые сокровища",
+        supportSection: "Помощь и поддержка",
+        emptyText: "Нет данных"
     }
 };
 
@@ -229,6 +319,16 @@ function applyLanguage(language) {
     document.querySelector("#overlooked-label").textContent = text.overlookedLabel;
     document.querySelector("#proud-label").textContent = text.proudLabel;
     document.querySelector("#enjoy-label").textContent = text.enjoyLabel;
+    hiddenContinueButton.textContent = text.continueText;
+
+    document.querySelector("#support-title").textContent = text.supportTitle;
+    document.querySelector("#support-hint").textContent = text.supportHint;
+    document.querySelector("#can-help-label").textContent = text.canHelpLabel;
+    document.querySelector("#need-help-label").textContent = text.needHelpLabel;
+    supportContinueButton.textContent = text.continueText;
+
+    document.querySelector("#summary-title").textContent = text.summaryTitle;
+    document.querySelector("#summary-hint").textContent = text.summaryHint;
 
     document.documentElement.lang = language;
     document.body.classList.toggle("arabic", language === "ar");
@@ -258,6 +358,48 @@ aboutContinueButton.addEventListener("click", () => {
 talentsContinueButton.addEventListener("click", () => {
     document.querySelector("#talents-page").hidden = true;
     document.querySelector("#hidden-treasures-page").hidden = false;
+});
+
+hiddenContinueButton.addEventListener("click", () => {
+    document.querySelector("#hidden-treasures-page").hidden = true;
+    document.querySelector("#support-page").hidden = false;
+});
+
+supportContinueButton.addEventListener("click", () => {
+    const text = translations[selectedLanguage];
+    const valueOrEmpty = (selector) => document.querySelector(selector).value.trim() || text.emptyText;
+    const selectedTalents = [...talentGrid.querySelectorAll(".card.selected .language-name")]
+        .map((item) => item.textContent)
+        .join(", ") || text.emptyText;
+
+    document.querySelector("#summary-content").innerHTML = `
+        <section class="summary-section">
+            <h2>${text.personalSection}</h2>
+            <p><strong>${text.nameLabel}:</strong> ${valueOrEmpty("#name")}</p>
+            <p><strong>${text.cityLabel}:</strong> ${valueOrEmpty("#city")}</p>
+            <p><strong>${text.countryLabel}:</strong> ${valueOrEmpty("#country")}</p>
+            <p><strong>${text.motherLanguageLabel}:</strong> ${valueOrEmpty("#mother-language")}</p>
+            <p><strong>${text.otherLanguagesLabel}:</strong> ${valueOrEmpty("#other-languages")}</p>
+        </section>
+        <section class="summary-section">
+            <h2>${text.talentsSection}</h2>
+            <p>${selectedTalents}</p>
+        </section>
+        <section class="summary-section">
+            <h2>${text.treasuresSection}</h2>
+            <p><strong>${text.overlookedLabel}</strong><br>${valueOrEmpty("#overlooked-skill")}</p>
+            <p><strong>${text.proudLabel}</strong><br>${valueOrEmpty("#proud-of")}</p>
+            <p><strong>${text.enjoyLabel}</strong><br>${valueOrEmpty("#enjoy-doing")}</p>
+        </section>
+        <section class="summary-section">
+            <h2>${text.supportSection}</h2>
+            <p><strong>${text.canHelpLabel}</strong><br>${valueOrEmpty("#can-help")}</p>
+            <p><strong>${text.needHelpLabel}</strong><br>${valueOrEmpty("#need-help")}</p>
+        </section>
+    `;
+
+    document.querySelector("#support-page").hidden = true;
+    document.querySelector("#summary-page").hidden = false;
 });
 
 renderTalents(selectedLanguage);
