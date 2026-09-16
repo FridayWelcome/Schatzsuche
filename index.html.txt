@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schatzsuche</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section id="language-page">
+            <header class="hero">
+                <h1>🌱 Schatzsuche</h1>
+                <p class="subtitle">Menschen sehen. Talente entdecken. Gemeinschaft stärken.</p>
+                <p class="welcome">
+                    Jeder Mensch bringt Fähigkeiten, Erfahrungen und Talente mit.
+                    Gemeinsam möchten wir die Schätze unserer Gemeinschaft sichtbar machen.
+                </p>
+            </header>
+
+            <h2 id="language-heading">Sprache wählen</h2>
+
+            <div class="language-grid">
+                <button class="card" data-language="de"><div class="flags">🇩🇪</div><div class="language-name">Deutsch</div></button>
+                <button class="card" data-language="en"><div class="flags">🇬🇧 🇺🇸 🇳🇬</div><div class="language-name">English</div></button>
+                <button class="card" data-language="fr"><div class="flags">🇫🇷 🇨🇲 🇹🇬 🇧🇯</div><div class="language-name">Français</div></button>
+                <button class="card" data-language="ar"><div class="flags">🇸🇾 🇱🇧 🇯🇴 🇵🇸</div><div class="language-name">العربية</div></button>
+                <button class="card" data-language="uk"><div class="flags">🇺🇦</div><div class="language-name">Українська</div></button>
+                <button class="card" data-language="tr"><div class="flags">🇹🇷</div><div class="language-name">Türkçe</div></button>
+                <button class="card" data-language="vi"><div class="flags">🇻🇳</div><div class="language-name">Tiếng Việt</div></button>
+                <button class="card" data-language="ru"><div class="flags">🇷🇺</div><div class="language-name">Русский</div></button>
+            </div>
+
+            <div class="continue-area">
+                <button id="continue-button" class="continue-button" hidden>Weiter</button>
+            </div>
+        </section>
+
+        <section id="about-page" hidden>
+            <h1 id="about-title">Über mich</h1>
+
+            <form class="about-form">
+                <label for="name" id="name-label">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name">
+
+                <label for="city" id="city-label">Stadt</label>
+                <input id="city" name="city" type="text" autocomplete="address-level2">
+
+                <label for="country" id="country-label">Herkunftsland</label>
+                <input id="country" name="country" type="text">
+
+                <label for="mother-language" id="mother-language-label">Muttersprache</label>
+                <input id="mother-language" name="mother-language" type="text">
+
+                <label for="other-languages" id="other-languages-label">Weitere Sprachen</label>
+                <input id="other-languages" name="other-languages" type="text">
+
+                <div class="navigation-area">
+                    <button id="about-back-button" class="back-button" type="button">Zurück</button>
+                    <button id="about-continue-button" class="continue-button" type="button">Weiter</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="talents-page" hidden>
+            <h1 id="talents-title">Was kann ich gut?</h1>
+            <p id="talents-hint" class="page-hint">Wähle alles aus, was zu dir passt.</p>
+
+            <div id="talent-grid" class="talent-grid"></div>
+
+            <div class="navigation-area">
+                <button id="talents-back-button" class="back-button" type="button">Zurück</button>
+                <button id="talents-continue-button" class="continue-button" type="button">
+                    Weiter
+                </button>
+            </div>
+        </section>
+
+        <section id="hidden-treasures-page" hidden>
+            <h1 id="hidden-treasures-title">Verborgene Schätze</h1>
+            <p id="hidden-treasures-hint" class="page-hint">Manche Fähigkeiten werden nicht sofort gesehen.</p>
+
+            <div class="question-group">
+                <label id="overlooked-label" for="overlooked-skill">Welche Fähigkeit an dir wird oft übersehen?</label>
+                <textarea id="overlooked-skill" name="overlooked-skill" rows="4"></textarea>
+
+                <label id="proud-label" for="proud-of">Worauf bist du stolz?</label>
+                <textarea id="proud-of" name="proud-of" rows="4"></textarea>
+
+                <label id="enjoy-label" for="enjoy-doing">Was machst du besonders gerne?</label>
+                <textarea id="enjoy-doing" name="enjoy-doing" rows="4"></textarea>
+            </div>
+
+            <div class="navigation-area">
+                <button id="hidden-back-button" class="back-button" type="button">Zurück</button>
+                <button id="hidden-continue-button" class="continue-button" type="button">Weiter</button>
+            </div>
+        </section>
+
+        <section id="support-page" hidden>
+            <h1 id="support-title">Helfen und Unterstützung</h1>
+            <p id="support-hint" class="page-hint">Gemeinschaft entsteht, wenn Menschen geben und Unterstützung annehmen können.</p>
+
+            <div class="question-group">
+                <label id="can-help-label" for="can-help">Ich kann helfen bei …</label>
+                <textarea id="can-help" name="can-help" rows="5"></textarea>
+
+                <label id="need-help-label" for="need-help">Ich wünsche Unterstützung bei …</label>
+                <textarea id="need-help" name="need-help" rows="5"></textarea>
+            </div>
+
+            <div class="navigation-area">
+                <button id="support-back-button" class="back-button" type="button">Zurück</button>
+                <button id="support-continue-button" class="continue-button" type="button">Weiter</button>
+            </div>
+        </section>
+
+        <section id="summary-page" hidden>
+            <h1 id="summary-title">Zusammenfassung</h1>
+            <p id="summary-hint" class="page-hint">Hier siehst du deine bisherigen Angaben.</p>
+            <div id="summary-content" class="summary-content"></div>
+
+            <div class="navigation-area">
+                <button id="summary-back-button" class="back-button" type="button">Zurück</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
